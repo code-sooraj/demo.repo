@@ -19,13 +19,16 @@ public class GuildTopicsService {
     @GET
     @Path("/ef")
     public Response efGuild() {
-    	List<String> topics = new ArrayList<String>(6);
+    	final List<String> topics = new ArrayList<String>(8);
     	topics.add("Spring");
     	topics.add("JPA");
     	topics.add("NoSQL");
-    	topics.add("Tomcat");
+    	topics.add("Docker");
     	topics.add("JavaEE");
-        return Response.status(200).entity("Hello World").build();
+    	topics.add("Hibernate");
+    	topics.add("Cassandra");
+    	topics.add("SQLite");
+        return Response.status(200).entity(topics.toString()).build();
     }
 
 }
