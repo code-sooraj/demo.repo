@@ -1,0 +1,19 @@
+FROM httpd:2.4
+
+RUN cd /usr/local/src
+RUN /usr/bin/wget http://www.rarlab.com/rar/rarlinux-x64-5.2.1.tar.gz
+RUN tar zxvf rarlinux-x64-5.2.1.tar.gz
+RUN cp rar/unrar /usr/local/bin
+
+RUN mkdir -p /usr/local/apache2/htdocs/staticondocker
+RUN unrar e /maven/staticondocker.rar /usr/local/apache2/htdocs/staticondocker  
+RUN rm -f /maven/staticondocker.rar
+
+# Copy files and directories from the application
+# COPY index.html /usr/local/apache2/htdocs/
+# COPY css/ /usr/local/apache2/htdocs/css/
+# COPY fonts/ /usr/local/apache2/htdocs/fonts/
+# COPY images/ /usr/local/apache2/htdocs/images/
+# COPY js/ /usr/local/apache2/htdocs/js/
+
+EXPOSE 9000
