@@ -70,7 +70,7 @@
     								<CATALINA_OPTS>-Xmx32m</CATALINA_OPTS>
   								</env>
 								<ports>
-    								<port>8090:8090</port>
+    								<port>8090:8080</port>
   								</ports>
 							</run>
                         </image>
